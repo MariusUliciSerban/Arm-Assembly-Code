@@ -1,0 +1,9 @@
+CHIP isNegative
+{
+    IN in[8];
+    OUT neg;
+
+PARTS:
+
+    Or(a = false,b = in[7],out = neg);
+}

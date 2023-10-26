@@ -1,0 +1,17 @@
+CHIP isZero
+{
+    IN in[8];
+    OUT zero;
+
+PARTS:
+
+    Or(a = in[0],b = false,out = false1);
+    Or(a = in[1],b = false1,out = false2);
+    Or(a = in[2],b = false2,out = false3);
+    Or(a = in[3],b = false3,out = false4);
+    Or(a = in[4],b = false4,out = false5);
+    Or(a = in[5],b = false5,out = false6);
+    Or(a = in[6],b = false6,out = false7);
+    Or(a = in[7],b = false7,out = false8);
+    Not(in = false8,out = zero);
+}
