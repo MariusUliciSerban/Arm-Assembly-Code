@@ -1,0 +1,11 @@
+CHIP HalfSubtractor
+{
+	IN x,y;
+	OUT d, bout;
+	
+	PARTS:
+
+	Not(in = x,out = notx);
+	Xor(a = x,b = y,out = d);
+	And(a = notx,b = y,out = bout);
+}

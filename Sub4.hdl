@@ -1,0 +1,15 @@
+CHIP Sub4
+{
+	IN a[4],b[4];
+	OUT out[4],bout;
+
+	PARTS:
+
+	HalfSubtractor(x = a[0], y = b[0], d = out[0], bout = num0);	
+
+	FullSubtractor(x = a[1], y = b[1], bin = num0, d = out[1], bout = num1);	
+
+	FullSubtractor(x = a[2], y = b[2], bin = num1, d = out[2], bout = num2);	
+
+	FullSubtractor(x = a[3], y = b[3], bin = num2, d = out[3], bout = bout);	
+}
