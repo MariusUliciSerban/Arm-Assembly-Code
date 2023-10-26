@@ -1,0 +1,31 @@
+CHIP ShiftR8
+{
+	IN in[8], load;
+	OUT out[8];
+
+	PARTS:
+
+	Mux(a = D2, b = in[0], sel = load, out = toD1);
+	DFF(in = toD1, out = D1, out = out[0]);
+
+	Mux(a = D3, b = in[1], sel = load, out = toD2);
+	DFF(in = toD2, out = D2, out = out[1]);
+
+	Mux(a = D4, b = in[2], sel = load, out = toD3);
+	DFF(in = toD3, out = D3, out = out[2]);
+
+	Mux(a = D5, b = in[3], sel = load, out = toD4);
+	DFF(in = toD4, out = D4, out = out[3]);
+
+	Mux(a = D6, b = in[4], sel = load, out = toD5);
+	DFF(in = toD5, out = D5, out = out[4]);
+
+	Mux(a = D7, b = in[5], sel = load, out = toD6);
+	DFF(in = toD6, out = D6, out = out[5]);
+
+	Mux(a = D8, b = in[6], sel = load, out = toD7);
+	DFF(in = toD7, out = D7, out = out[6]);
+
+	Mux(a = false, b = in[7], sel = load, out = toD8);
+	DFF(in = toD8, out = D8, out = out[7]);
+}

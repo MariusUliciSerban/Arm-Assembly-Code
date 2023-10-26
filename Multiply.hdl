@@ -1,0 +1,19 @@
+CHIP Multiply
+{
+	IN a[8], b[8], load;
+	OUT out[16];
+
+	PARTS:
+
+	ShiftR8(in = b, load = load, out[0] = RightOut);
+
+	ShiftL8(in = a, load = load, out = LeftOut);
+
+	Mux16(a = false, b = LeftOut, sel = RightOut, out = MOut);
+
+	Add16(a = MOut, b = ROut, out = AOut);
+
+	Mux16(a = AOut, b = false, sel = load, out = total);
+
+	Register(in = total, load = true, out = ROut, out = out);
+}
